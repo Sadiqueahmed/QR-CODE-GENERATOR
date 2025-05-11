@@ -1,0 +1,195 @@
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  overflow-y: auto;
+  background-color: #f4f6f9;
+  color: #333;
+  padding: 20px;
+}
+
+.container{
+  background-color: #ffffff;
+  width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  padding: 20px;
+}
+
+h2{
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 24px;
+  padding: 10px 0;
+  background-color: #f4f6f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.options{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.options button{
+  flex: 1 1 30%;
+  padding: 10px;
+  font-size: 14px;
+  background-color: #8b5dff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.options button:hover{
+  background-color: #563A9C;
+}
+
+.options button.active{
+  background-color: #6a42c2;
+  color: #fff;
+}
+
+.form-container{
+  margin-top: 10px;
+}
+.qr-form{
+  display: none;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn{
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.qr-form label{
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.qr-form input, .qr-form textarea{
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #333;
+  transition: border-color 0.3s;
+}
+
+.qr-form input:focus, .qr-form textarea:focus {
+  border-color: #8b5dff;
+  outline: none;
+}
+
+.color-options{
+  margin: 10px 0;
+}
+
+.color-options label{
+  display: inline-block;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.color-options input[type="color"]{
+  width: 40px;
+  height: 30px;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+
+.color-options input[type="text"]{
+  width: 120px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+button{
+  width:100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+}
+
+button:hover{
+  background-color: #0056b3;
+}
+
+.qr-output{
+  text-align: center;
+  margin-top: 20px;
+}
+
+#qr-code{
+  margin: 20px auto;
+  width: 200px;
+  height: 200px;
+  background-color: #f4f6f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qr-output button{
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #17a2b8;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.qr-output button:hover{
+  background-color: #138496;
+}
+
+.button-container{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.button-container button{
+  width: 48%;
+  padding: 12px;
+}

@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Code Generator</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h2>QR Code Generator</h2>
+    <div class="options">
+      <button onclick="showForm('link')">Link</button>
+      <button onclick="showForm('email')">E-mail</button>
+      <button onclick="showForm('text')">Text</button>
+      <button onclick="showForm('call')">Call</button>
+      <button onclick="showForm('sms')">SMS</button>
+      <button onclick="showForm('whatsapp')">Whatsapp</button>
+      <button onclick="showForm('wifi')">Wi-Fi</button>
+      <button onclick="showForm('event')">Event</button>
+      <button onclick="showForm('social-media')">Social Media</button>
+    </div>
+
+    <div class="form-container">
+
+      <!-- link  -->
+      <form id="link" class="qr-form" style="display: none;">
+        <label for="link-url">URL:</label>
+        <input type="text" id="link-url" placeholder="https://www.example.com">
+      </form>
+
+      <!-- email  -->
+    <form id="email" class="qr-form" style="display: none;">
+      <label for="email-address">Email-Address: </label>
+      <input type="email" id="email-address" placeholder="example@example.com" required>
+      <label for="email-subject">Subject:</label>
+      <input type="text" id="email-subject" placeholder="Enter Subject" required>
+      <label for="email-message">Message: </label>
+      <textarea id="email-message" placeholder="Enter your message" required></textarea> <br>
+    </form>
+
+    <!-- text  -->
+    <form id="text" class="qr-form" style="display: none;">
+      <label for="text-message">Message</label>
+      <textarea id="text-message" placeholder="Enter your Message"></textarea>
+    </form>
+
+    <!-- call  -->
+
+    <form id="call" class="qr-form" style="display: none;">
+      <label for="call-number">Phone Number:</label>
+      <input type="tel" id="call-number" placeholder="+1234567890">
+
+    </form>
+
+    <!-- sms  -->
+    <form id="sms" class="qr-form" style="display: none;">
+      <label for="sms-number">Phone Number:</label>
+      <input type="tel" id="sms-number" placeholder="+1234567890">
+      <label for="sms-message">Message: </label>
+      <textarea id="sms-message" placeholder="Enter your SMS message"></textarea>
+    </form>
+
+    <!-- whatsapp  -->
+     <form id="whatsapp" class="qr-form" style="display: none;">
+      <label for="whatsapp-number">Whatsapp Number:</label>
+      <input type="tel" id="whatsapp-number" placeholder="+1234567890">
+     </form>
+
+     <!-- wifi  -->
+      <form id="wifi" class="qr-form" style="display: none;">
+        <label for="wifi-ssid">Wi-Fi SSID:</label>
+        <input type="text" id="wifi-ssid" placeholder="Enter Wi-Fi SSID">
+        <label for="wifi-password">Wi-Fi Password: </label>
+        <input type="password" id="wifi-password" placeholder="Enter Wi-Fi password">
+      </form>
+
+      <!-- event-form  -->
+       <form id="event" class="qr-form" style="display: none;">
+        <label for="event-title">Event Title (Name): </label>
+        <input type="text" id="event-title" placeholder="Enter Event name" required>
+        <label for="event-start-date">Start Date: </label>
+        <input type="date" id="event-start-date" required> <br>
+
+        <label for="event-end-date">End Date: </label>
+        <input type="date" id="event-end-date" required> <br>
+
+        <label for="event-location">Location: </label>
+        <input type="text" id="event-location" placeholder="Enter Event Location" required> <br>
+        
+       </form>
+
+       <!-- social-media  -->
+        <form id="social-media" class="qr-form" style="display: none;">
+
+          <label for="social-media-url">Social Media URL: </label>
+          <input type="url" id="social-media-url" placeholder="Enter social media URL" required> <br>
+          
+        </form>
+    </div>
+
+    <div class="color-options">
+      <label for="qr-color">QR Code Color:</label>
+      <input type="color" id="qr-color" value="#000000">
+      <input type="text" id="qr-color-hex" value="#000000" placeholder="Enter Hex Color">
+    </div>
+    <div class="color-options">
+      <label for="qr-bg-color">Background Color:</label>
+      <input type="color" id="qr-bg-color" value="#ffffff">
+      <input type="text" id="qr-bg-color-hex" value="#ffffff" placeholder="Enter Hex Color">
+    </div>
+
+    <div class="qr-output">
+      <div class="button-container">
+        <button onclick="generateQRCode()">Generate QR Code</button>
+        <button onclick="clearQRCode()">Clear</button>
+      </div>
+    </div>
+
+    <div class="qr-output">
+      <div id="qr-code"></div>
+      <button onclick="downloadQRCode()">Download QR Code</button>
+    </div>
+
+  </div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
